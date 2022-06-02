@@ -1,6 +1,6 @@
 ---
-layout: category
-title: "첫 포스팅 입니다. 설레네요."
+layout: post
+title: "Jekyll 설명"
 ---
 
 # page만드는 법 연습
