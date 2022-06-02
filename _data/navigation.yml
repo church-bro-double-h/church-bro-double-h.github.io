@@ -2,11 +2,11 @@
 main:
   - title: "eQuick-Start Guid"
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "About" 
+  - title: "About"
     url: https://mmistakes.github.io/minimal-mistakes/about/
   - title: "Sample Collections"
     url: /collection-archive/
   - title: "Sitemap"
     url: /sitemap/
   - title: "Jekyll 사용법"
-    url: /year-archive/
+    url: /Jekyll/
