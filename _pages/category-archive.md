@@ -1,5 +1,5 @@
 ---
-title: "Category"
+title: "POST목록보기"
 layout: categories
 permalink: /categories/
 author_profile: true
