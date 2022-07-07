@@ -1,6 +1,14 @@
 # main links
 main:
-  - title: "POST Categories"
-    url: /categories/
-  - title: "Tag"
-    url: /tags/
+  - title: "프로그래밍"
+    url: /categories/#programming
+  - title: "금융"
+    url: /categories/#banking
+  - title: "신앙"
+    url: /categories/#faith
+  - title: "기타"
+    url: /categories/#etc
+  - title: "목록으로 찾기"
+    url: /categories
+  - title: "태그로 찾기"
+    url: /tags
