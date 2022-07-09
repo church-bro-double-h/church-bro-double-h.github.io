@@ -20,7 +20,7 @@ locale                   : "ko-KR"
 title                    : "DoubleHH's blog"
 title_separator          : "|"
 subtitle                 : "#개발자 #금융 #자기계발"
-name                     : "KangHyoHyeong"
+name                     : "Kang Hyo Hyeong"
 description              : "Daily 개발 공부용"
 url                      : "https://church-bro-double-h.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -108,7 +108,7 @@ author:
   name             : "KangHyoHyeong"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I want to be good developer"
-  location         : "The Republic of Korea, Gwang-Ju metropolitan city"
+  location         : "The Republic of Korea, Gwang-Ju"
   email            :
   links:
     - label: "rkdgygud@naver.com"

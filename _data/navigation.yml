@@ -9,6 +9,8 @@ main:
   - title: "기타"
     url: /categories/#etc
   - title: "목록으로 찾기"
-    url: /categories
+    url: /categories/
   - title: "태그로 찾기"
-    url: /tags
+    url: /tags/
+  - title: "검색어로 찾기"
+    url: /search/
