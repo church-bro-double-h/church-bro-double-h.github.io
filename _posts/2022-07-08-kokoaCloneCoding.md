@@ -265,3 +265,12 @@ body {
   - default : row
 - flex-wrap : element를 같은 줄에 위치시킬 수 있음.
 - wrap-reverse, row-reverse등의 속성을 통해 위치를 조정할 수 있음.
+
+### 3.12 Fixed
+```CSS
+POSITION:FIEXED
+```
+- 화면을 고정시키고 싶을때 사용
+- Netflix의 메뉴와 같이 최 앞단에 위치시킴.(top, bottom, left, right등의 property를 줬을때)
+
+### 3.13 Relative Absolute
