@@ -268,9 +268,18 @@ body {
 
 ### 3.12 Fixed
 ```CSS
-POSITION:FIEXED
+body{
+ position:fiexed
+}
 ```
 - 화면을 고정시키고 싶을때 사용
 - Netflix의 메뉴와 같이 최 앞단에 위치시킴.(top, bottom, left, right등의 property를 줬을때)
 
 ### 3.13 Relative Absolute
+- 'position: static' : 레이아웃이 박스를 처음 위치하는 곳에 두는 것
+- 'position: relative' : 아주 조금 위치를 옮기고 싶을때 사용. element가 처음 위치한 곳을 기준으로 위치 조정
+- 'position: absolute' : 가장 가까운 relative 부모를 기준으로 이동
+
+### 3.14 Pseudo Selectors part One 
+- 원하는 component를 선택해서 style을 apply하고 싶을때 사용
+- 
