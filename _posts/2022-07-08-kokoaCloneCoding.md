@@ -282,4 +282,156 @@ body{
 
 ### 3.14 Pseudo Selectors part One 
 - 원하는 component를 선택해서 style을 apply하고 싶을때 사용
-- 
+```CSS
+div:first-child{
+ background-color: #00c918;
+}
+div:last-child{
+  background-color: #00adb5;
+}
+div:nth-child(even){
+  background-color: #6b4003;
+}
+div:nth-child(odd){
+  background-color: red;
+}
+div:nth-child(2n+1){
+  background-color: yellow;
+}
+```
+### 3.15 Combinators
+- 특정 컴포넌트 안의 컴포넌트를 조절하려고 할때 사용
+```CSS
+p span{
+ color: #00c918;
+}
+div p span{
+  color: tomato;
+}
+/* > : 직접적인 자식관계에만 적용, 손자관계 미적용 */
+div > span{
+  color: teal;
+}
+/* + : 바로 붙어있는 형제관계 적용 */
+p + span{
+  color: tan;
+}
+/* ~ : 형제관계 적용 */
+p ~ span{
+  color: tan;
+}
+```
+
+### 3.16 Pseudo Selectors part Two
+- 다양한 선택자들이 있고, 이를 적절히 사용할 수 있다.
+- <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blacnk">Pseudo Selectors 설명 사이트 이동</a>
+- <a href="https://developer.mozilla.org/ko/docs/Web/CSS/Attribute_selectors" target="_blacnk">Attribute Selectors 설명 사이트 이동</a>
+```CSS
+input:required {
+ border-color: #00c918;
+}
+/* placeholder가 unsersname인것 */
+input[placeholder="username"] {
+  color: tomato;
+}
+/* placeholder에 name이 포함인 것*/
+input[placeholder~="name"] {
+  color: tomato;
+}
+/* > : 직접적인 자식관계에만 적용, 손자관계 미적용 */
+div > span{
+  color: teal;
+}
+/* + : 바로 붙어있는 형제관계 적용 */
+p + span{
+  color: tan;
+}
+/* ~ : 형제관계 적용 */
+p ~ span{
+  color: tan;
+}
+```
+
+### 3.17 States
+- 상태에 대한 스타일을 변화시킬 수 있다.
+```CSS
+/* 버튼 눌렀을때 상태 */
+button:active {
+ border-color: #00c918;
+}
+/* 버튼에 포인트가 갔을때 상태 */
+button:hover {
+  border-color: #00c918;
+}
+/* 버튼에 키보드의 focusing이 이루어졌을때 상태 */
+button:focus {
+  border-color: #00c918;
+}
+/* 링크를 방문했을때 상태 */
+a:visited {
+  border-color: #00c918;
+}
+/* form 아래 focus가능한 컴포넌트가 focus 됐을때 상태변화*/
+form{
+  border: 1px solid salmon;
+  display: flex;
+  flex-direction: column;
+  padding:20px;
+}
+form:focus-within{
+  background-color: darkblue;
+}
+/* form이 덮어지면 input에 적용 */
+form:hover input{
+  background-color: darkblue;
+}
+
+div > span{
+  color: teal;
+}
+/* + : 바로 붙어있는 형제관계 적용 */
+p + span{
+  color: tan;
+}
+/* ~ : 형제관계 적용 */
+p ~ span{
+  color: tan;
+}
+```
+
+### 3.18 Recap
+- 복습 및 추가 Pseudo selector
+```CSS
+/* placeholder style change */
+input::placeholder {
+ border-color: #00c918;
+}
+/* 문장을 드래그했을때 선택박스 style change */
+p::selection {
+  border-color: #00c918;
+}
+/* 첫번째 글자 style change */
+p::first-letter {
+  color: #00c918;
+}
+```
+
+### 3.19 Colors and Variables
+- 사람들이 이름을 지어놓은 컬러 종류가 있다.
+- color에는 3가지 종류가 있다.
+  - name
+  - color code
+  - rgb
+```CSS
+/* root에 style을 변수 선언 --변수명(띄어쓰기있다면-로 변환) */
+:root{
+  --main-color:#fcc200;
+}
+/* 변수를 사용할때는 var(--변수명) */
+p {
+  background-color: var(--main-color);  
+}
+a {
+  color: var(--main-color);
+}
+```
