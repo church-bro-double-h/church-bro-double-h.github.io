@@ -267,14 +267,13 @@ body {
 - wrap-reverse, row-reverse등의 속성을 통해 위치를 조정할 수 있음.
 
 ### 3.12 Fixed
-```CSS
-body{
- position:fiexed
-}
-```
 - 화면을 고정시키고 싶을때 사용
 - Netflix의 메뉴와 같이 최 앞단에 위치시킴.(top, bottom, left, right등의 property를 줬을때)
-
+```css
+body {
+    position: fixed;
+}
+```
 ### 3.13 Relative Absolute
 - 'position: static' : 레이아웃이 박스를 처음 위치하는 곳에 두는 것
 - 'position: relative' : 아주 조금 위치를 옮기고 싶을때 사용. element가 처음 위치한 곳을 기준으로 위치 조정
@@ -282,7 +281,7 @@ body{
 
 ### 3.14 Pseudo Selectors part One 
 - 원하는 component를 선택해서 style을 apply하고 싶을때 사용
-```CSS
+```css
 div:first-child{
  background-color: #00c918;
 }
@@ -301,7 +300,7 @@ div:nth-child(2n+1){
 ```
 ### 3.15 Combinators
 - 특정 컴포넌트 안의 컴포넌트를 조절하려고 할때 사용
-```CSS
+```css
 p span{
  color: #00c918;
 }
@@ -326,7 +325,7 @@ p ~ span{
 - 다양한 선택자들이 있고, 이를 적절히 사용할 수 있다.
 - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blacnk">Pseudo Selectors 설명 사이트 이동</a>
 - <a href="https://developer.mozilla.org/ko/docs/Web/CSS/Attribute_selectors" target="_blacnk">Attribute Selectors 설명 사이트 이동</a>
-```CSS
+```css
 input:required {
  border-color: #00c918;
 }
@@ -354,7 +353,7 @@ p ~ span{
 
 ### 3.17 States
 - 상태에 대한 스타일을 변화시킬 수 있다.
-```CSS
+```css
 /* 버튼 눌렀을때 상태 */
 button:active {
  border-color: #00c918;
@@ -401,7 +400,7 @@ p ~ span{
 
 ### 3.18 Recap
 - 복습 및 추가 Pseudo selector
-```CSS
+```css
 /* placeholder style change */
 input::placeholder {
  border-color: #00c918;
@@ -422,7 +421,8 @@ p::first-letter {
   - name
   - color code
   - rgb
-```CSS
+
+```css
 /* root에 style을 변수 선언 --변수명(띄어쓰기있다면-로 변환) */
 :root{
   --main-color:#fcc200;
@@ -435,3 +435,49 @@ a {
   color: var(--main-color);
 }
 ```
+
+## 4 ADVANCED CSS
+
+### 4.0 Transitions
+- CSS가 심화되어 동적인 부분을 할 수 있게 되었다.
+- 어떤 상태에서 다른 상태로의 "변화"를 애니메이션으로 만드는 방법
+- transition이라는 속성은 state가 없는 element에 붙어야 함 ex)hover가 없는 속성
+- transition: 무엇을 얼마나 특성, 무엇을 얼마나 특성
+- transition: all 모든 것을 변화
+```css
+a {
+  color:wheat;
+  background-color: tomato;
+  text-decoration: none;
+  padding: 3px 5px;
+  border-radius: 5px;
+  font-size: 55px;
+  transition: background-color 10s ease-in-out;
+}
+
+a:hover {
+  color: tomato;
+  background-color: wheat;
+}
+```
+
+### 4.1 Transitions part Two
+- ease-in-out : 기본적으로 브라우저에게 어떻게 변할지 알려주는 속성
+- <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blacnk" >Pseudo Selectors 설명 사이트 이동</a>
+- cubic-bezier는 아주 강력해서 나만의 커브를 만들수 있게 함
+
+### 4.2 Transformations
+- element를 변화시킴
+```css
+img {
+  border:10px solid black;
+  border-radius: 50%;
+  transform: rotateY(85deg);  
+}
+```
+- rotateY, rotateX, rotateZ : 축을 기준으로 기울임
+- scale(2,2) : 배율
+- translateX : 축을 기준으로 이동
+- skew(50deg) : 기울이기
+- 다른 element에 영향을 주지 않음. 다른 요소의 box를 변화시키지 않고 이동시킬 때 사용 
+- CSS에 있는 모든 애니메이션은 GPU에 의해 돌아감
