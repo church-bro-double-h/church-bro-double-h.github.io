@@ -140,10 +140,12 @@ https://developer.mozilla.org/ko/docs/Web/HTML/Element
 ### 2.9 More Tags and IDs
 - Form 태그를 더 예쁘게 만들어봄
 - label 태그 : label은 input 태그랑 같이 있어야 동작함.
+
 ```html
 <label for="profile">Profile Photo</label>
 <input id="profile" type="file" accept=".png, .pdf"/>
 ```
+
 - input 태그의 type 입력시 적절성 여부를 판단해줌.
 - id
 - unique identifier.
@@ -214,6 +216,7 @@ https://developer.mozilla.org/ko/docs/Web/HTML/Element
 ### 3.5 Margin Part Two
 - 방향없이 margin을 주면 사방이 다 적용된다.
 - margin : 위아래 20xp, 좌우 15px 적용
+
 ```css
 body {
     margin: 20px 15px;
@@ -221,6 +224,7 @@ body {
 ```
 
 - margin : 위20px, 오른쪽 5px, 아래 12px, 왼쪽 9px 시계방향대로 적용
+
 ```css
 body {
     margin: 20px 5px 12px 9px;
@@ -269,6 +273,7 @@ body {
 ### 3.12 Fixed
 - 화면을 고정시키고 싶을때 사용
 - Netflix의 메뉴와 같이 최 앞단에 위치시킴.(top, bottom, left, right등의 property를 줬을때)
+
 ```css
 body {
     position: fixed;
@@ -281,6 +286,7 @@ body {
 
 ### 3.14 Pseudo Selectors part One 
 - 원하는 component를 선택해서 style을 apply하고 싶을때 사용
+
 ```css
 div:first-child{
  background-color: #00c918;
@@ -300,6 +306,7 @@ div:nth-child(2n+1){
 ```
 ### 3.15 Combinators
 - 특정 컴포넌트 안의 컴포넌트를 조절하려고 할때 사용
+
 ```css
 p span{
  color: #00c918;
@@ -325,6 +332,7 @@ p ~ span{
 - 다양한 선택자들이 있고, 이를 적절히 사용할 수 있다.
 - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blacnk">Pseudo Selectors 설명 사이트 이동</a>
 - <a href="https://developer.mozilla.org/ko/docs/Web/CSS/Attribute_selectors" target="_blacnk">Attribute Selectors 설명 사이트 이동</a>
+
 ```css
 input:required {
  border-color: #00c918;
@@ -353,6 +361,7 @@ p ~ span{
 
 ### 3.17 States
 - 상태에 대한 스타일을 변화시킬 수 있다.
+
 ```css
 /* 버튼 눌렀을때 상태 */
 button:active {
@@ -400,6 +409,7 @@ p ~ span{
 
 ### 3.18 Recap
 - 복습 및 추가 Pseudo selector
+
 ```css
 /* placeholder style change */
 input::placeholder {
@@ -444,6 +454,7 @@ a {
 - transition이라는 속성은 state가 없는 element에 붙어야 함 ex)hover가 없는 속성
 - transition: 무엇을 얼마나 특성, 무엇을 얼마나 특성
 - transition: all 모든 것을 변화
+
 ```css
 a {
   color:wheat;
@@ -468,6 +479,7 @@ a:hover {
 
 ### 4.2 Transformations
 - element를 변화시킴
+
 ```css
 img {
   border:10px solid black;
@@ -481,3 +493,42 @@ img {
 - skew(50deg) : 기울이기
 - 다른 element에 영향을 주지 않음. 다른 요소의 box를 변화시키지 않고 이동시킬 때 사용 
 - CSS에 있는 모든 애니메이션은 GPU에 의해 돌아감
+
+### 4.3 Animations part One
+- 계속 동작하는 애니메이션을 만들고 싶을때
+
+```css
+@keyframes superSexyCoinFlip {
+  from {
+    transform: rotateX(0);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}
+img {
+  animation:superSexyCoinFlip 5s ease-in-out infinite;
+}
+
+```
+
+### 4.4 Animations part Two
+- 단계별로 동작을 적용할 수 있음.
+- 애니메이션이 적용안되는 속성도 있음.
+
+```css
+@keyframes superSexyCoinFlip {
+  0% {
+    transform: rotateY(0);
+  }
+  50% {
+    transform: rotateY(360deg) translate(100px);
+  }
+  100% {
+    transform: rotateY(0);
+  }
+}
+img {
+  animation:superSexyCoinFlip 5s ease-in-out infinite;
+}
+```
