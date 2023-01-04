@@ -2824,7 +2824,7 @@ lunr.Query = function (allFields) {
  * })
  */
 
-lunr.Query.wildcard = new String ("*")
+lunr.Query.wildcard = String ("*")
 lunr.Query.wildcard.NONE = 0
 lunr.Query.wildcard.LEADING = 1
 lunr.Query.wildcard.TRAILING = 2

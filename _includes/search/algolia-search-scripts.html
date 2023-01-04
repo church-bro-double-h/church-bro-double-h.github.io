@@ -37,10 +37,10 @@ const hitTemplate = function(hit) {
 search.addWidget(
   instantsearch.widgets.searchBox({
     container: '.search-searchbar',
-    {% unless site.algolia.powered_by == false %}poweredBy: true,{% endunless %}
-    placeholder: '{{ site.data.ui-text[site.locale].search_placeholder_text | default: "Enter your search term..." }}'
+    {% unless site.algolia.powered_by == false %}true,{% endunless %}
+    '{{ site.data.ui-text[site.locale].search_placeholder_text | default: "Enter your search term..." }}'
   })
-);
+)
 search.addWidget(
   instantsearch.widgets.hits({
     container: '.search-hits',

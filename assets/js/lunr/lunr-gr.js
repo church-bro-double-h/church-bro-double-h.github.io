@@ -2,7 +2,7 @@
 layout: none
 ---
 
-step1list = new Array();
+step1list = [];
 step1list["ΦΑΓΙΑ"] = "ΦΑ";
 step1list["ΦΑΓΙΟΥ"] = "ΦΑ";
 step1list["ΦΑΓΙΩΝ"] = "ΦΑ";
@@ -51,7 +51,7 @@ function stemWord(w) {
   var suffix;
   var firstch;
   var origword = w;
-  test1 = new Boolean(true);
+  test1 = Boolean(true);
 
   if(w.length < 4) {
     return w;
@@ -445,7 +445,7 @@ function stemWord(w) {
   }
 
   return w;
-};
+}
 
 var greekStemmer = function (token) {
   return token.update(function (word) {
