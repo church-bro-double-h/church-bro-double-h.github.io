@@ -1,187 +1,10 @@
 ---
 layout: single
-title: "svelte 공식 사이트 Tutorial 정리"
+title: "svelte 공식 사이트 Tutorial 정리 ③ : Props"
 categories: svelte
 tag: [svelte, front-end]
 comments: true
 ---
-
-# Introduction
-
-## 1. Adding data
-- Script에서 선언한 변수를 Markup에서 사용할 수 있다.
-- {변수명}
-
-```html
-<script>
-  let name = 'world';
-</script>
-
-<h1>Hello {name}!</h1>
-```
-
-- 놀랍게도 {}(중괄호)가 갖는 의미는 단순히 변수를 사용한다라는 의미보다는 해당 {}(중괄호)안에서 Javascript를 사용할 수 있다는 점에 있는게 아닌가 싶다.
-  따라서 아래와 같은 소스의 구현도 가능한 것이다.
-
-```html
-<h1>Hello {name.toUpperCase()}</h1>
-``` 
-
-## 2.Dynamic attributes
-- 중괄호는 엘리먼트의 속성을 조작할 수 있다.
-
-```html
-<script>
-  let src = '/tutorial/image.gif';
-</script>
-
-<img src={src}>
-```
-- 변수명과 속성명이 동일하다면 아래와 같이 쓸수도 있다.
-
-```html
-<script>
-  let src = '/tutorial/image.gif';
-  let alt = 'this is alt';
-</script>
-
-<img {src} {alt}>
-```
-
-## 3.Styling
-- 일반 HTML파일처럼 Style태그를 가질 수 있다.
-
-```html
-<p>This is a paragraph</p>
-
-<style>
-  p {
-    color:purple;
-    font-family: 'Comic Sans MS', cursive;
-    font-size: 2em; 
-  }
-</style>
-```
-
-
-## 4.Nested components
-- 원하는 컴포넌트를 다른 파일로부터 끼워넣을 수 있다.
-- nest의 사전적 의미 : 4. [동사][전문 용어] (큰 단위의 정보 속에 작은 단위의 정보를) 끼워 넣다
-※ 이후 '컴포넌트를 끼워 넣다'라고 표현
-
-App.svelte 존재
-Nested.svelte 존재
-
-```html
-<script>
-  import Nested from './Nested.svelte'
-</script>
-
-<p>This is a paragraph.</p>
-<Nested/>
-
-<style>
-  p {
-    color: purple;
-    font-family: 'Comic Sans MS', cursive;
-    font-size: 2em;
-  }
-</style>
-```
-### ★규칙★ 
-- 이때 유저가 정의한 컴포넌트와 HTML태그를 구분하기 위해 <span style="color:red">첫글자를 대문자로 </span> 명명하여야 한다.
-
-## 5. HTML tags
-- 문자 안의 태그는 기본적으로 String이지만, 해당 HTML태그를 적용하고 싶을때에는 {@html 변수명}을 사용한다.
-
-
-```html
-<p>{@html string}</p>
-```
-## 6. Making an App
-- 원하는 text-editor에서 작업할 수 있도록 빌드 툴을 설치해줘야 되는데, svelte에서는 SvelteKit을 추천한다. Vite를 통해 번들링을 한다.
-- SvelteKit을 설치하기 위해서는 원하는 디렉토리로 이동하여 아래와 같은 npm 구문을 써준다.
-
-```console
-npm create svelte@latest myapp
-```
-### 유용한 Tool 안내 페이지
-<a href="https://sveltesociety.dev/tools">community-maintained integrations.</a>
-
-### SvelteKit 개발환경 셋팅 안내 페이지
-<a href="https://svelte.dev/blog/svelte-for-new-developers">Svelte for new developers</a>
-
-### Client-side component API
-<a href="https://svelte.dev/docs#run-time-client-side-component-api">component API</a>
-
-# Reativity
-
-## 1. Assignments
-- Svelte의 심장은 어플리케이션의 상태의 Sync를 DOM과 맞추는 강력한 반응성 시스템에 있다.
-
-### 예시 : 버튼을 누름에 따라 바로 횟수 증가
-```html
-<script>
-  let count = 0;
-
-  function incrementCount() {
-    // event handler code goes here
-    count += 1;
-  }
-</script>
-
-<button on:click={incrementCount}>
-  Clicked {count} {count === 1 ? 'time' : 'times'}
-</button>
-```
-## 2. Declarations 
-- Svelte는 단순히 DOM영역의 Sync만을 맞추는게 아니라, 변수끼리의 Sync도 맞춰준다.
-
-```html
-let count = 0;
-$: doubled = count * 2;
-
-<p>{count} doubled is {doubled}</p>
-```
-- 만약 위 구분이 그저 스크립트로만 구성되어 있었다면,
-<br>스크립트를 모두 호출한 다음에 태그의 데이터가 셋팅되므로 '0 doubled is 0'이라고 표시되었을 테지만,
-<br>count에 1을 선언한다면 double의 값도 sync가 맞춰저 2가 되고 화면에는 '1 doubled is 2' 라고 표시될 것이다.
-
-## 3. Statements
-- $:의 용법은 구문 사용도 가능하다.
-
-```html
-$: console.log('the count is ' + count);
-
-$: {
-console.log('the count is ' + count);
-alert('I SAID THE COUNT IS ' + count);
-}
-
-$: if (count >= 10) {
-    alert('count is dangerously high!');
-    count = 9;
-}
-```
-
-## 4. Updating arrays and objects
-- 배열과 관련된 메소드를 사용하는 경우 반응형으로 sync를 맞춰주지 못하기에 아래와 같은 방법을 사용한다.
-
-### javascript 정석
-```javascript
-function addNumber() {
-	numbers.push(numbers.length + 1);
-	numbers = numbers;
-}
-```
-### ES6 spread syntax
-```javascript
-  function addNumber() {
-    numbers[numbers.length] = numbers.length + 1;
-  }
-```
-- 동일한 규칙에 의해 pop, shift, splice 및 Map.set, Set.add와 같은 objects methods 등 또한 위와 같이 사용이 가능하다.
-- 그러나 간접적인 참조변수의 할당은 반응성의 트리거를 발생시킬수 없으므로 obj = obj와 같은 형식으로 구현해야 한다.
 
 # Props
 
@@ -589,8 +412,67 @@ function addNumber() {
 
 ## Inline handlers
 - 이벤트 헨들러를 Inline 구문으로 선언할수도 있다.
-- 이벤트 핸들러란?
-- 
+- 이벤트 핸들러 설명 관련 게시물 이동 : <a href='https://church-bro-double-h.github.io/javascript/javascript-2/' target='_blank' style="color:blue; font-size:12px; font-weight:bold;">이벤트, 이벤트 핸들러, 이벤트 리스너</a>
+
+### 예시
+
+```html
+<script>
+	let m = { x: 0, y: 0 };
+
+</script>
+
+<div on:mousemove="{e => m = { x: e.clientX, y: e.clientY }}">
+	The mouse position is {m.x} x {m.y}
+</div>
+
+<style>
+	div { width: 100%; height: 100%; }
+</style>
+```
+
+## Event modifiers
+- DOM이벤트 핸들러에 수식어 그들의 행동을 변경하는 수식어(한정어)를 가질 수 있다.
+
+### once 예시
+- 이벤트가 단 한번만 실행됨.
+
+```html
+<script>
+	function handleClick() {
+		alert('no more alerts')
+	}
+</script>
+
+<button on:click|once={handleClick}>
+	Click me
+</button>
+```
+
+### The full list of modifiers
+- preventDefault : calls event.preventDefault() before running the handler. Useful for client-side form handling, for example.
+- stopPropagation : calls event.stopPropagation(), preventing the event reaching the next element
+- passive : improves scrolling performance on touch/wheel events (Svelte will add it automatically where it's safe to do so)
+- nonpassive : explicitly set passive: false
+- capture : fires the handler during the capture phase instead of the bubbling phase (MDN docs)
+- once : remove the handler after the first time it runs
+- self : only trigger handler if event.target is the element itself
+- trusted : only trigger handler if event.isTrusted is true. I.e. if the event is triggered by a user action.
+
+### modifier는 함께 쓸 수도 있다.
+```on:click|once|capture={...}```
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 참고 사이트
 <a href='https://svelte.dev/tutorial/making-an-app' target='_blank' style="color:blue; font-size:12px; font-weight:bold;"># Svelte 공식사이트 튜토리얼</a>
