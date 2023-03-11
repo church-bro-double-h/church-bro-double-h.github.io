@@ -16,7 +16,7 @@ comments: true
 <script>
   let name = 'world';
 </script>
-
+ 
 <h1>Hello {name}!</h1>
 ```
 
@@ -89,13 +89,7 @@ Nested.svelte 존재
 ### ★규칙★ 
 - 이때 유저가 정의한 컴포넌트와 HTML태그를 구분하기 위해 <span style="color:red">첫글자를 대문자로 </span> 명명하여야 한다.
 
-## 5. HTML tags
-- 문자 안의 태그는 기본적으로 String이지만, 해당 HTML태그를 적용하고 싶을때에는 {@html 변수명}을 사용한다.
-
-```html
-<p>{@html string}</p>
-```
-## 6. Making an App
+## 5. Making an App
 - 원하는 text-editor에서 작업할 수 있도록 빌드 툴을 설치해줘야 되는데, svelte에서는 SvelteKit을 추천한다. Vite를 통해 번들링을 한다.
 - SvelteKit을 설치하기 위해서는 원하는 디렉토리로 이동하여 아래와 같은 npm 구문을 써준다.
 

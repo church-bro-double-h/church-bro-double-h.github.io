@@ -28,7 +28,7 @@ comments: true
 ```
 ## 2. Declarations 
 - Svelte는 단순히 DOM영역의 Sync만을 맞추는게 아니라, 변수끼리의 Sync도 맞춰준다.
-
+- 반응형 변수를 선언하기 위해서 ```$:``` 라는 keyword를 사용한다.
 ```html
 let count = 0;
 $: doubled = count * 2;
@@ -40,7 +40,7 @@ $: doubled = count * 2;
 <br>count에 1을 선언한다면 double의 값도 sync가 맞춰저 2가 되고 화면에는 '1 doubled is 2' 라고 표시될 것이다.
 
 ## 3. Statements
-- $:의 용법은 구문 사용도 가능하다.
+- $:의 용법은 구문 사용에도 적용이 가능해서, 참조하고 있는 값이 변경되면 해당 구문이 다시 실행되는 것이다.
 
 ```html
 $: console.log('the count is ' + count);
