@@ -367,4 +367,4 @@ comments: true
 
 
 ## 참고 사이트
-<a href='https://svelte.dev/tutorial/making-an-app' target='_blank' style="color:blue; font-size:12px; font-weight:bold;"># Svelte 공식사이트 튜토리얼</a>
+<a href='https://svelte.dev/tutorial/if-blocks' target='_blank' style="color:blue; font-size:12px; font-weight:bold;"># Svelte 공식사이트 튜토리얼</a>

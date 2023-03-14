@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="KubernetesSettings">
+    <specSources>
+      <SpecSource>
+        <option name="pathOrUrl" value="https://fbf0f252-15f1-4e39-8245-3dcf05db1303.kr.vnks.ntruss.com" />
+      </SpecSource>
+    </specSources>
+  </component>
+</project>

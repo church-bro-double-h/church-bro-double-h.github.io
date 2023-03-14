@@ -97,14 +97,14 @@ Nested.svelte 존재
 npm create svelte@latest myapp
 ```
 ### 유용한 Tool 안내 페이지
-<a href="https://sveltesociety.dev/tools">community-maintained integrations.</a>
+<a href="https://sveltesociety.dev/tools" target='_blank'>community-maintained integrations.</a>
 
 ### SvelteKit 개발환경 셋팅 안내 페이지
-<a href="https://svelte.dev/blog/svelte-for-new-developers">Svelte for new developers</a>
+<a href="https://svelte.dev/blog/svelte-for-new-developers" target='_blank'>Svelte for new developers</a>
 
 ### Client-side component API
-<a href="https://svelte.dev/docs#run-time-client-side-component-api">component API</a>
+<a href="https://svelte.dev/docs#run-time-client-side-component-api" target='_blank'>component API</a>
 
 
 ## 참고 사이트
-<a href='https://svelte.dev/tutorial/making-an-app' target='_blank' style="color:blue; font-size:12px; font-weight:bold;"># Svelte 공식사이트 튜토리얼</a>
+<a href='https://svelte.dev/tutorial/basics' target='_blank' style="color:blue; font-size:12px; font-weight:bold;"># Svelte 공식사이트 튜토리얼</a>

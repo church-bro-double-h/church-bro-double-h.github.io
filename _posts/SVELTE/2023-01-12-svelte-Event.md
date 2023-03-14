@@ -83,7 +83,10 @@ comments: true
 - trusted : only trigger handler if event.isTrusted is true. I.e. if the event is triggered by a user action.
 
 ### modifier는 함께 쓸 수도 있다.
-```on:click|once|capture={...}```
+
+```shell
+  on:click|once|capture={...}
+```
 
 ## Component events
 - 컴포넌트 안에 있는 이벤트는 전달되어 모체에서 사용할수 있다. 그렇게 하기 위해서는 event Dispatcher를 만들어야 한다. 
@@ -91,8 +94,9 @@ comments: true
 ### 방법
 
 1. svelte의 Class를 불러와서 함수에 사용한다.
-#### Component.svelte
-```sveltehtml
+###### Component.svelte
+
+```html
 <script>
   import { createEventDispatcher } from 'svelte';
 
@@ -111,7 +115,8 @@ comments: true
 - 클릭하면 sayHello라는 이벤트를 호출한다. sayHello 이벤트는 전달해주는데 message라는 이벤트에 {text: 'Hello!'}를 전달해준다.
 
 2. 컴포넌트를 사용하는 모체에서 컴포넌트를 생성할때 아래와 같이 구현
-```sveltehtml
+
+```html
 <script>
 	import Inner from './Inner.svelte';
 
@@ -134,7 +139,8 @@ comments: true
 - 버블링(bubbling)은 DOM 이벤트 처리 중 하위 요소에서 발생한 이벤트가 상위 요소로 전달되는 현상을 말합니다. 즉, 하위 요소에서 이벤트가 발생하면 이벤트가 가장 하위의 요소에서 시작해서 조상 요소로 올라가면서 발생하는 것입니다. 예를 들어, div 요소 안에 button 요소가 있는 경우, 버튼을 클릭하면 버튼에서 click 이벤트가 발생합니다. 이때 이벤트는 버튼에서 시작해서 div 요소로 올라가면서 발생합니다. 이렇게 상위 요소로 전달되는 이벤트를 버블링 이벤트(bubbling event)라고 합니다. 이러한 버블링 현상은 이벤트 처리 과정에서 이벤트 전파를 편리하게 해주지만, 이벤트가 불필요하게 상위 요소까지 전파되는 경우도 있어서 성능 문제를 일으킬 수도 있습니다.
 
 ### dispatch 사용 예
-```sveltehtml
+
+```html
 <script>
 	import Inner from './Inner.svelte';
 	import { createEventDispatcher } from 'svelte';
@@ -149,7 +155,8 @@ comments: true
 <Inner on:message={forward}/>
 ```
 ### 줄인 예
-```sveltehtml
+
+```html
 <script>
 	import Inner from './Inner.svelte';
 </script>
@@ -159,15 +166,16 @@ comments: true
 ## DOM event forwarding
 - 앞서 기술한 바와 동일한 원리로 DOM 이벤트에 대해서도 전달(forwarding)하여 사용할수 있다.
 
-### CustomButton.svelte
-```sveltehtml
+###### CustomButton.svelte
+```html
 <button on:click>
 	Click me
 </button>
 ```
 
-### App.svelte
-```sveltehtml
+###### App.svelte
+
+```html
 <script>
 	import CustomButton from './CustomButton.svelte';
 
@@ -184,6 +192,6 @@ comments: true
 
 
 ## 참고 사이트
-<a href='https://svelte.dev/tutorial/making-an-app' target='_blank' style="color:blue; font-size:12px; font-weight:bold;"># Svelte 공식사이트 튜토리얼</a>
+<a href='https://svelte.dev/tutorial/dom-events' target='_blank' style="color:blue; font-size:12px; font-weight:bold;"># Svelte 공식사이트 튜토리얼</a>
 <a href='https://ko.javascript.info/introduction-browser-events' target='_blank' style="color:blue; font-size:12px; font-weight:bold;"># Svelte 공식사이트 튜토리얼</a>
 
