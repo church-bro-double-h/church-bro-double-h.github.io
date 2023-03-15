@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "svelte 공식 사이트 Tutorial 정리 ⑩ : Transitions & The animate directive"
+title: "svelte 공식 사이트 Tutorial 정리 ⑩ : Transitions"
 categories: svelte
 tag: [svelte, front-end]
 comments: true
