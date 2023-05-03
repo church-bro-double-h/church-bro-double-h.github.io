@@ -51,17 +51,17 @@ comments: true
 - 일관성을 잘 유지했는가
 
 # 자료구조
-![cdTest-1.png](..%2F..%2F_images%2FcdTest-1.png)
+![cdTest-1.png](https://church-bro-double-h.github.io/assets/images/cdTest-1.png)
 
 ## 선형구조
 - 한 원소 뒤에 하나의 원소만 존재하는 형태
 <br>
-![cdTest-2.png](..%2F..%2F_images%2FcdTest-2.png)
+![cdTest-2.png](https://church-bro-double-h.github.io/assets/images/cdTest-2.png)
 
 ## 비선형구조
 - 계층적 구조나 망형 구조표현에 적절
 <br>
-![cdTest-3.png](..%2F..%2F_images%2FcdTest-3.png)
+![cdTest-3.png](https://church-bro-double-h.github.io/assets/images/cdTest-3.png)
 
 # 시간복잡도
 - BigO 표기법
@@ -248,11 +248,11 @@ console.log(numbers); // [9, 6, 5, 5, 5, 4, 3, 3, 2, 1, 1]
 
 ## 배열 생성
 
-![cdTest-4.png](..%2F..%2F_images%2FcdTest-4.png)
+![cdTest-4.png](https://church-bro-double-h.github.io/assets/images/cdTest-4.png)
 
 ## 배열 요소 추가 및 삭제
 
-![cdTest-5.png](..%2F..%2F_images%2FcdTest-5.png)
+![cdTest-5.png](https://church-bro-double-h.github.io/assets/images/cdTest-5.png)
 
 # 배열과 객체
 - length()를 통해 배열 길이를 알 수 있음.
@@ -300,24 +300,24 @@ for (const key in obj) {
 
 ## 요소 찾기
 
-![cdTest-6.png](..%2F..%2F_images%2FcdTest-6.png)
+![cdTest-6.png](https://church-bro-double-h.github.io/assets/images/cdTest-6.png)
 
 ## 요소 추가
 
-![cdTest-7.png](..%2F..%2F_images%2FcdTest-7.png)
+![cdTest-7.png](https://church-bro-double-h.github.io/assets/images/cdTest-7.png)
 
 ## 요소 삭제
 
-![cdTest-8.png](..%2F..%2F_images%2FcdTest-8.png)
+![cdTest-8.png](https://church-bro-double-h.github.io/assets/images/cdTest-8.png)
 
 ## 이중연결리스트(Doubly Linked List)
 - 이전노드 다음노드에 대한 Pointer 2개 존재하므로 자료구조의 크기가 조금 더 크다
 
 ## 요소 추가
-![cdTest-9.png](..%2F..%2F_images%2FcdTest-9.png)
+![cdTest-9.png](https://church-bro-double-h.github.io/assets/images/cdTest-9.png)
 
 ## 요소 삭제
-![cdTest-10.png](..%2F..%2F_images%2FcdTest-10.png)
+![cdTest-10.png](https://church-bro-double-h.github.io/assets/images/cdTest-10.png)
 
 ## 환영연결리스트(Circular Linked List)
 - Singly 또는 Doubly에서 Tail이 Head로 연결되는 연결 리스트
@@ -325,12 +325,12 @@ for (const key in obj) {
 # Stack
 - Last In First Out이라는 개념을 가진 선형 자료구조
 
-![cdTest-11.png](..%2F..%2F_images%2FcdTest-11.png)
+![cdTest-11.png](https://church-bro-double-h.github.io/assets/images/cdTest-11.png)
 
 # 큐
 - First In First Out이라는 개념을 가진 선형 자료구조
 
-![cdTest-12.png](..%2F..%2F_images%2FcdTest-12.png)
+![cdTest-12.png](https://church-bro-double-h.github.io/assets/images/cdTest-12.png)
 
 ## Array로 구현
 
@@ -446,12 +446,12 @@ class Queue {
 # 해시 테이블
 - 키와 값을 받아 키를 해싱하여 나온 index에 값을 저장하는 선형 자료구조
 
-![cdTest-13.png](..%2F..%2F_images%2FcdTest-13.png)
+![cdTest-13.png](https://church-bro-double-h.github.io/assets/images/cdTest-13.png)
 
 ## 해시 함수
 - 입력받은 값을 특정 범위 내 숫자로 변경하는 함수
 
-![cdTest-14.png](..%2F..%2F_images%2FcdTest-14.png)
+![cdTest-14.png](https://church-bro-double-h.github.io/assets/images/cdTest-14.png)
 
 ## 해시 충돌(Hash Collision)
 - 해결방법은 아래와 같다.
@@ -499,9 +499,11 @@ console.log(table.size);
 
 ## 무방향 그래프
 
-![cdTest-15.png](..%2F..%2F_images%2FcdTest-15.png)
+![cdTest-15.png](https://church-bro-double-h.github.io/assets/images/cdTest-15.png)
 
 ## 방향 그래프
 
-![cdTest-16.png](..%2F..%2F_images%2FcdTest-16.png)
+![cdTest-16.png](https://church-bro-double-h.github.io/assets/images/cdTest-16.png)
 
+## 연결 그래프
+![cdTest-17.png](https://church-bro-double-h.github.io/assets/images/cdTest-17.png)
